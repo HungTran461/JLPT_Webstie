@@ -1,0 +1,550 @@
+{
+  "exam_info": {
+    "next_exam_name": "Kỳ thi JLPT Đợt 2 / 2026",
+    "next_exam_date": "2026-12-06T09:00:00",
+    "registration_status": "Sắp mở đăng ký (Dự kiến tháng 8)",
+    "location": "Hà Nội, Đà Nẵng, TP. Hồ Chí Minh, Huế"
+  },
+  "exams": [
+    {
+      "id": "2024-7",
+      "name": "Đề thi JLPT Tháng 7/2024",
+      "level": "N5",
+      "choukai_audio": "audio/JLPT_N5_7_2024.mp3",
+      "sections": {
+        "moji_goi": {
+          "title": "文字・語彙 (もじーごい)",
+          "time_limit": 25,
+          "pdf_url": "exams/JLPT-N5-7-2024-Mojigoi.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 1, "correct": 2 },
+                { "id": 2, "page": 1, "correct": 3 },
+                { "id": 3, "page": 1, "correct": 1 },
+                { "id": 4, "page": 1, "correct": 2 },
+                { "id": 5, "page": 1, "correct": 3 },
+                { "id": 6, "page": 1, "correct": 0 },
+                { "id": 7, "page": 1, "correct": 1 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 8, "page": 1, "correct": 2 },
+                { "id": 9, "page": 1, "correct": 3 },
+                { "id": 10, "page": 2, "correct": 0 },
+                { "id": 11, "page": 2, "correct": 1 },
+                { "id": 12, "page": 2, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 13, "page": 2, "correct": 1 },
+                { "id": 14, "page": 2, "correct": 3 },
+                { "id": 15, "page": 2, "correct": 1 },
+                { "id": 16, "page": 2, "correct": 2 },
+                { "id": 17, "page": 2, "correct": 0 },
+                { "id": 18, "page": 2, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 19, "page": 3, "correct": 2 },
+                { "id": 20, "page": 3, "correct": 0 },
+                { "id": 21, "page": 3, "correct": 3 }
+              ]
+            }
+          ]
+        },
+        "bunpou": {
+          "title": "文法・読解 (ぶんぼうーどっかい)",
+          "time_limit": 50,
+          "pdf_url": "exams/JLPT-N5-7-2024-Bunbou.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 1, "correct": 3 },
+                { "id": 2, "page": 1, "correct": 2 },
+                { "id": 3, "page": 1, "correct": 1 },
+                { "id": 4, "page": 1, "correct": 3 },
+                { "id": 5, "page": 1, "correct": 1 },
+                { "id": 6, "page": 1, "correct": 2 },
+                { "id": 7, "page": 1, "correct": 0 },
+                { "id": 8, "page": 1, "correct": 0 },
+                { "id": 9, "page": 2, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 10, "page": 2, "correct": 0 },
+                { "id": 11, "page": 2, "correct": 0 },
+                { "id": 12, "page": 2, "correct": 1 },
+                { "id": 13, "page": 2, "correct": 2 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 14, "page": 4, "correct": 1 },
+                { "id": 15, "page": 4, "correct": 1 },
+                { "id": 16, "page": 4, "correct": 3 },
+                { "id": 17, "page": 4, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 18, "page": 5, "correct": 0 },
+                { "id": 19, "page": 6, "correct": 2 }
+              ]
+            },
+            {
+              "title": "問題 5",
+              "options_count": 4,
+              "questions": [
+                { "id": 20, "page": 7, "correct": 3 },
+                { "id": 21, "page": 8, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 6",
+              "options_count": 4,
+              "questions": [
+                { "id": 22, "page": 9, "correct": 0 }              
+              ]
+            }
+          ]
+        },
+        "choukai": {
+          "title": "聴解 (Nghe hiểu)",
+          "time_limit": 30,
+          "pdf_url": "exams/JLPT-N5-7-2024-Choukai.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 1, "correct": 1 },
+                { "id": 2, "page": 2, "correct": 0 },
+                { "id": 3, "page": 2, "correct": 1 },
+                { "id": 4, "page": 2, "correct": 1 },
+                { "id": 5, "page": 3, "correct": 2 },
+                { "id": 6, "page": 3, "correct": 2 },
+                { "id": 7, "page": 4, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 5, "correct": 0 },
+                { "id": 2, "page": 6, "correct": 3 },
+                { "id": 3, "page": 6, "correct": 3 },
+                { "id": 4, "page": 7, "correct": 2 },
+                { "id": 5, "page": 7, "correct": 1 },
+                { "id": 6, "page": 8, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 9, "correct": 0 },
+                { "id": 2, "page": 10, "correct": 0 },
+                { "id": 3, "page": 10, "correct": 1 },
+                { "id": 4, "page": 11, "correct": 2 },
+                { "id": 5, "page": 11, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 12, "correct": 1 },
+                { "id": 2, "page": 12, "correct": 2 },
+                { "id": 3, "page": 12, "correct": 2 },
+                { "id": 4, "page": 12, "correct": 1 },
+                { "id": 5, "page": 12, "correct": 0 },
+                { "id": 6, "page": 12, "correct": 2 }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2025-7",
+      "name": "Đề thi JLPT Tháng 7/2025",
+      "level": "N5",
+      "choukai_audio": "audio/JLPT_N5_7_2025.mp3",
+      "sections": {
+        "moji_goi": {
+          "title": "文字・語彙 (もじーごい)",
+          "time_limit": 25,
+          "pdf_url": "exams/JLPT-N5-7-2025-Mojigoi.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 3, "correct": 1 },
+                { "id": 2, "page": 3, "correct": 2 },
+                { "id": 3, "page": 3, "correct": 0 },
+                { "id": 4, "page": 3, "correct": 0 },
+                { "id": 5, "page": 3, "correct": 3 },
+                { "id": 6, "page": 3, "correct": 1 },
+                { "id": 7, "page": 4, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 8, "page": 5, "correct": 1 },
+                { "id": 9, "page": 5, "correct": 1 },
+                { "id": 10, "page": 5, "correct": 0 },
+                { "id": 11, "page": 5, "correct": 2 },
+                { "id": 12, "page": 5, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 13, "page": 6, "correct": 0 },
+                { "id": 14, "page": 6, "correct": 3 },
+                { "id": 15, "page": 6, "correct": 1 },
+                { "id": 16, "page": 6, "correct": 0 },
+                { "id": 17, "page": 6, "correct": 2 },
+                { "id": 18, "page": 6, "correct": 2 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 19, "page": 7, "correct": 1 },
+                { "id": 20, "page": 7, "correct": 1 },
+                { "id": 21, "page": 8, "correct": 0 }
+              ]
+            }
+          ]
+        },
+        "bunpou": {
+          "title": "文法・読解 (ぶんぼうーどっかい)",
+          "time_limit": 50,
+          "pdf_url": "exams/JLPT-N5-7-2025-Bunbou.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 3, "correct": 3 },
+                { "id": 2, "page": 3, "correct": 2 },
+                { "id": 3, "page": 3, "correct": 4 },
+                { "id": 4, "page": 3, "correct": 0 },
+                { "id": 5, "page": 3, "correct": 1 },
+                { "id": 6, "page": 3, "correct": 2 },
+                { "id": 7, "page": 4, "correct": 1 },
+                { "id": 8, "page": 4, "correct": 0 },
+                { "id": 9, "page": 4, "correct": 2 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 10, "page": 5, "correct": 2 },
+                { "id": 11, "page": 6, "correct": 3 },
+                { "id": 12, "page": 6, "correct": 0 },
+                { "id": 13, "page": 6, "correct": 1 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 14, "page": 9, "correct": 0 },
+                { "id": 15, "page": 9, "correct": 3 },
+                { "id": 16, "page": 9, "correct": 2 },
+                { "id": 17, "page": 9, "correct": 1 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 18, "page": 10, "correct": 3 },
+                { "id": 19, "page": 11, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 5",
+              "options_count": 4,
+              "questions": [
+                { "id": 20, "page": 13, "correct": 2 },
+                { "id": 21, "page": 13, "correct": 1 }
+              ]
+            },
+            {
+              "title": "問題 6",
+              "options_count": 4,
+              "questions": [
+                { "id": 22, "page": 14, "correct": 3 }              
+              ]
+            }
+          ]
+        },
+        "choukai": {
+          "title": "聴解 (Nghe hiểu)",
+          "time_limit": 30,
+          "pdf_url": "exams/JLPT-N5-7-2025-Choukai.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 4, "correct": 0 },
+                { "id": 2, "page": 4, "correct": 3 },
+                { "id": 3, "page": 5, "correct": 0 },
+                { "id": 4, "page": 6, "correct": 3 },
+                { "id": 5, "page": 6, "correct": 2 },
+                { "id": 6, "page": 7, "correct": 1 },
+                { "id": 7, "page": 7, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 10, "correct": 2 },
+                { "id": 2, "page": 10, "correct": 3 },
+                { "id": 3, "page": 11, "correct": 0 },
+                { "id": 4, "page": 11, "correct": 1 },
+                { "id": 5, "page": 12, "correct": 3 },
+                { "id": 6, "page": 12, "correct": 1 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 14, "correct": 1 },
+                { "id": 2, "page": 14, "correct": 2 },
+                { "id": 3, "page": 15, "correct": 0 },
+                { "id": 4, "page": 15, "correct": 0 },
+                { "id": 5, "page": 16, "correct": 1 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 17, "correct": 2 },
+                { "id": 2, "page": 17, "correct": 1 },
+                { "id": 3, "page": 17, "correct": 0 },
+                { "id": 4, "page": 17, "correct": 0 },
+                { "id": 5, "page": 17, "correct": 1 },
+                { "id": 6, "page": 17, "correct": 2 }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2025-12",
+      "name": "Đề thi JLPT Tháng 12/2025",
+      "level": "N5",
+      "choukai_audio": "audio/JLPT_N5_12_2025.mp3",
+      "sections": {
+        "moji_goi": {
+          "title": "文字・語彙 (もじーごい)",
+          "time_limit": 25,
+          "pdf_url": "exams/JLPT-N5-12-2025-Mojigoi.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 3, "correct": 0 },
+                { "id": 2, "page": 3, "correct": 0 },
+                { "id": 3, "page": 3, "correct": 3 },
+                { "id": 4, "page": 3, "correct": 1 },
+                { "id": 5, "page": 3, "correct": 0 },
+                { "id": 6, "page": 4, "correct": 1 },
+                { "id": 7, "page": 4, "correct": 1 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 8, "page": 5, "correct": 3 },
+                { "id": 9, "page": 5, "correct": 2 },
+                { "id": 10, "page": 5, "correct": 3 },
+                { "id": 11, "page": 5, "correct": 1 },
+                { "id": 12, "page": 5, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 13, "page": 6, "correct": 1 },
+                { "id": 14, "page": 6, "correct": 2 },
+                { "id": 15, "page": 6, "correct": 0 },
+                { "id": 16, "page": 6, "correct": 0 },
+                { "id": 17, "page": 6, "correct": 3 },
+                { "id": 18, "page": 6, "correct": 4 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 19, "page": 7, "correct": 2 },
+                { "id": 20, "page": 7, "correct": 1 },
+                { "id": 21, "page": 8, "correct": 0 }
+              ]
+            }
+          ]
+        },
+        "bunpou": {
+          "title": "文法・読解 (ぶんぼうーどっかい)",
+          "time_limit": 50,
+          "pdf_url": "exams/JLPT-N5-12-2025-Bunbou.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 3, "correct": 3 },
+                { "id": 2, "page": 3, "correct": 1 },
+                { "id": 3, "page": 3, "correct": 2 },
+                { "id": 4, "page": 3, "correct": 1 },
+                { "id": 5, "page": 3, "correct": 0 },
+                { "id": 6, "page": 4, "correct": 3 },
+                { "id": 7, "page": 4, "correct": 2 },
+                { "id": 8, "page": 4, "correct": 0 },
+                { "id": 9, "page": 4, "correct": 2 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 10, "page": 5, "correct": 2 },
+                { "id": 11, "page": 6, "correct": 1 },
+                { "id": 12, "page": 6, "correct": 0 },
+                { "id": 13, "page": 6, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 14, "page": 8, "correct": 0 },
+                { "id": 15, "page": 8, "correct": 2 },
+                { "id": 16, "page": 8, "correct": 3 },
+                { "id": 17, "page": 8, "correct": 1 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 18, "page": 9, "correct": 2 },
+                { "id": 19, "page": 10, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 5",
+              "options_count": 4,
+              "questions": [
+                { "id": 20, "page": 12, "correct": 1 },
+                { "id": 21, "page": 12, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 6",
+              "options_count": 4,
+              "questions": [
+                { "id": 22, "page": 13, "correct": 2 }              
+              ]
+            }
+          ]
+        },
+        "choukai": {
+          "title": "聴解 (Nghe hiểu)",
+          "time_limit": 30,
+          "pdf_url": "exams/JLPT-N5-12-2025-Choukai.pdf",
+          "problems": [
+            {
+              "title": "問題 1",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 3, "correct": 3 },
+                { "id": 2, "page": 3, "correct": 3 },
+                { "id": 3, "page": 3, "correct": 2 },
+                { "id": 4, "page": 4, "correct": 2 },
+                { "id": 5, "page": 4, "correct": 1 },
+                { "id": 6, "page": 5, "correct": 0 },
+                { "id": 7, "page": 5, "correct": 3 }
+              ]
+            },
+            {
+              "title": "問題 2",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 6, "correct": 3 },
+                { "id": 2, "page": 6, "correct": 2 },
+                { "id": 3, "page": 7, "correct": 1 },
+                { "id": 4, "page": 7, "correct": 0 },
+                { "id": 5, "page": 7, "correct": 3 },
+                { "id": 6, "page": 8, "correct": 2 }
+              ]
+            },
+            {
+              "title": "問題 3",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 9, "correct": 2 },
+                { "id": 2, "page": 9, "correct": 1 },
+                { "id": 3, "page": 10, "correct": 0 },
+                { "id": 4, "page": 10, "correct": 2 },
+                { "id": 5, "page": 11, "correct": 0 }
+              ]
+            },
+            {
+              "title": "問題 4",
+              "options_count": 4,
+              "questions": [
+                { "id": 1, "page": 11, "correct": 1 },
+                { "id": 2, "page": 11, "correct": 1 },
+                { "id": 3, "page": 11, "correct": 0 },
+                { "id": 4, "page": 11, "correct": 2 },
+                { "id": 5, "page": 11, "correct": 0 },
+                { "id": 6, "page": 11, "correct": 2 }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

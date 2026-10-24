@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>JLPT Renshuu - Luyện Thi PDF & OMR Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <link rel="stylesheet" href="jlpt.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-amber-400 selection:text-slate-900">
+
+    <!-- Header Navigation -->
+    <nav class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-3 sm:px-4 py-2.5 sm:py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2 sm:space-x-3 cursor-pointer" id="nav-logo">
+                <span class="text-2xl sm:text-3xl">🎯</span>
+                <span class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent tracking-tight">JLPT Renshuu</span>
+            </div>
+
+            <button id="btn-home-nav" class="px-2.5 sm:px-3 py-1.5 bg-slate-700 hover:bg-slate-600 rounded-lg text-xs font-bold text-slate-200 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-house"></i>
+                <span class="hidden sm:inline">Màn hình chính</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- VIEW 1: MÀN HÌNH CHÍNH (LỰA CHỌN ĐỀ THI & LỊCH SỬ) -->
+    <main id="home-view" class="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-6 sm:space-y-8 flex-1 w-full">
+        <!-- Banner Đếm Ngược Ngày Thi JLPT -->
+        <section class="bg-gradient-to-br from-slate-800 to-slate-800/60 p-4 sm:p-6 rounded-2xl border border-slate-700 shadow-xl flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
+            <div class="w-full md:w-auto text-center md:text-left">
+                <span class="inline-block px-3 py-1 bg-red-500/20 text-red-400 rounded-full text-xs font-semibold mb-2 border border-red-500/30">
+                    <i class="fa-solid fa-bell mr-1"></i> <span id="exam-title">Đang tải...</span>
+                </span>
+                <h1 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white">Đếm ngược kỳ thi JLPT kế tiếp</h1>
+                <p class="text-xs text-slate-400 mt-1">
+                    <i class="fa-solid fa-calendar-day mr-1 text-red-400"></i> Ngày thi: <strong id="exam-date" class="text-slate-200">--/--/----</strong>
+                    <span class="mx-1.5">|</span>
+                    <i class="fa-solid fa-map-marker-alt mr-1 text-emerald-400"></i> <span id="exam-location">--</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-4 gap-2 sm:gap-3 text-center w-full md:w-auto min-w-[280px] sm:min-w-[320px]">
+                <div class="bg-slate-900/90 p-2.5 sm:p-3 rounded-xl border border-slate-700">
+                    <span id="days" class="text-xl sm:text-2xl font-extrabold text-amber-400 block">00</span>
+                    <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase font-semibold">Ngày</span>
+                </div>
+                <div class="bg-slate-900/90 p-2.5 sm:p-3 rounded-xl border border-slate-700">
+                    <span id="hours" class="text-xl sm:text-2xl font-extrabold text-amber-400 block">00</span>
+                    <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase font-semibold">Giờ</span>
+                </div>
+                <div class="bg-slate-900/90 p-2.5 sm:p-3 rounded-xl border border-slate-700">
+                    <span id="minutes" class="text-xl sm:text-2xl font-extrabold text-amber-400 block">00</span>
+                    <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase font-semibold">Phút</span>
+                </div>
+                <div class="bg-slate-900/90 p-2.5 sm:p-3 rounded-xl border border-slate-700">
+                    <span id="seconds" class="text-xl sm:text-2xl font-extrabold text-amber-400 block">00</span>
+                    <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase font-semibold">Giây</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Danh sách Các Đề Thi JLPT -->
+        <section class="space-y-3 sm:space-y-4">
+            <h2 class="text-lg sm:text-xl font-bold text-slate-100 flex items-center gap-2">
+                <i class="fa-solid fa-folder-open text-amber-400"></i> Chọn Đề Thi JLPT Để Luyện Tập
+            </h2>
+            <div id="exam-cards-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+        </section>
+
+        <!-- Lịch Sử Làm Bài -->
+        <section class="bg-slate-800 p-4 sm:p-6 rounded-2xl border border-slate-700 shadow-xl space-y-3 sm:space-y-4">
+            <div class="flex justify-between items-center">
+                <h3 class="text-base sm:text-lg font-bold text-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-clock-rotate-left text-emerald-400"></i> Lịch Sử Làm Bài
+                </h3>
+                <button id="btn-clear-history" class="text-xs text-slate-400 hover:text-red-400 transition">
+                    <i class="fa-solid fa-trash-can mr-1"></i> Xóa lịch sử
+                </button>
+            </div>
+            <div id="history-container" class="overflow-x-auto -mx-1 px-1"></div>
+        </section>
+    </main>
+
+    <!-- VIEW 2: MÀN HÌNH LÀM BÀI THI (PDF & OMR SHEET) -->
+    <main id="exam-view" class="hidden max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 space-y-4 flex-1 w-full">
+        <!-- Thanh Điều Hướng & Bộ Đếm Giờ Phần Thi -->
+        <div class="bg-slate-800 p-3 rounded-2xl border border-slate-700 flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center space-x-2 sm:space-x-3 w-full sm:w-auto justify-between sm:justify-start">
+                <button id="btn-back-to-home" class="px-2.5 py-1.5 bg-slate-700 hover:bg-slate-600 text-xs font-bold rounded-xl transition flex items-center gap-1">
+                    <i class="fa-solid fa-arrow-left"></i> Trang chủ
+                </button>
+                <h2 id="active-exam-title" class="text-sm sm:text-base font-bold text-amber-400 truncate">--</h2>
+            </div>
+
+            <div class="flex items-center justify-between w-full sm:w-auto gap-3">
+                <!-- Đồng hồ đếm ngược từng phần -->
+                <div id="section-timer-box" class="bg-red-950/80 border border-red-500/50 px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-inner">
+                    <i class="fa-solid fa-stopwatch text-red-400 animate-pulse text-xs"></i>
+                    <span class="text-[11px] sm:text-xs text-slate-300">Còn lại:</span>
+                    <span id="section-timer-display" class="font-mono text-base sm:text-lg font-black text-amber-400">00:00</span>
+                </div>
+
+                <!-- Chỉ báo 3 phần thi -->
+                <div class="flex bg-slate-900 p-1 rounded-xl border border-slate-700 text-[11px] sm:text-xs">
+                    <div class="section-indicator px-2 sm:px-3 py-1 rounded-lg text-slate-400 font-bold" id="ind-moji_goi">1. Moji</div>
+                    <div class="section-indicator px-2 sm:px-3 py-1 rounded-lg text-slate-400 font-bold" id="ind-bunpou">2. Bunpou</div>
+                    <div class="section-indicator px-2 sm:px-3 py-1 rounded-lg text-slate-400 font-bold" id="ind-choukai">3. Choukai</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khung PDF (Trái) & OMR Sheet (Phải) -->
+        <div class="grid lg:grid-cols-12 gap-4 sm:gap-6 items-start">
+            <!-- Cột PDF -->
+            <section class="lg:col-span-7 xl:col-span-8 flex flex-col space-y-3">
+                <!-- Player Choukai Audio -->
+                <div id="choukai-audio-box" class="hidden bg-indigo-950/90 border border-indigo-500/40 p-3 sm:p-3.5 rounded-xl flex flex-col space-y-2.5 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <button id="btn-play-audio" class="w-9 h-9 sm:w-10 sm:h-10 bg-indigo-600 hover:bg-indigo-500 text-white rounded-full flex items-center justify-center shadow transition flex-shrink-0">
+                                <i id="audio-icon" class="fa-solid fa-play text-sm sm:text-base"></i>
+                            </button>
+                            <div>
+                                <p class="text-xs font-bold text-indigo-200">Đĩa Nghe Choukai Đích Thực</p>
+                                <p id="audio-status" class="text-[10px] sm:text-[11px] text-indigo-400">Nhấp để phát đĩa thi</p>
+                            </div>
+                        </div>
+
+                        <button id="btn-toggle-audio-timeline" class="px-2.5 py-1.5 bg-indigo-900/80 hover:bg-indigo-800 text-indigo-200 rounded-lg text-[11px] sm:text-xs font-semibold flex items-center gap-1.5 border border-indigo-500/30 transition">
+                            <i id="timeline-toggle-icon" class="fa-solid fa-eye-slash"></i>
+                            <span id="timeline-toggle-text" class="hidden sm:inline">Hiện thanh thời gian</span>
+                        </button>
+                    </div>
+
+                    <div id="audio-timeline-container" class="hidden flex items-center gap-2.5 pt-2 border-t border-indigo-800/60 text-xs text-indigo-300">
+                        <span id="audio-current-time" class="font-mono text-[11px]">00:00</span>
+                        <input type="range" id="audio-progress" value="0" min="0" max="100" class="w-full h-1.5 bg-indigo-950 rounded-lg appearance-none cursor-pointer accent-amber-400">
+                        <span id="audio-duration" class="font-mono text-[11px]">00:00</span>
+                    </div>
+
+                    <audio id="choukai-player" class="hidden"></audio>
+                </div>
+
+                <!-- Điều khiển PDF Zoom / Chuyển trang -->
+                <div class="bg-slate-800 p-2.5 rounded-xl border border-slate-700 flex justify-between items-center text-xs">
+                    <div class="flex items-center space-x-2">
+                        <button id="btn-pdf-prev" class="px-2.5 py-1 bg-slate-900 hover:bg-slate-700 rounded border border-slate-700"><i class="fa-solid fa-chevron-left"></i></button>
+                        <span id="pdf-page-display" class="font-bold text-amber-400">Trang 1</span>
+                        <button id="btn-pdf-next" class="px-2.5 py-1 bg-slate-900 hover:bg-slate-700 rounded border border-slate-700"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button id="btn-zoom-out" class="px-2 py-1 bg-slate-900 hover:bg-slate-700 rounded border border-slate-700"><i class="fa-solid fa-minus"></i></button>
+                        <button id="btn-zoom-in" class="px-2 py-1 bg-slate-900 hover:bg-slate-700 rounded border border-slate-700"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Canvas PDF -->
+                <div id="pdf-wrapper" class="bg-slate-950 rounded-xl border border-slate-700 p-2 flex justify-center items-start min-h-[420px] sm:min-h-[550px] max-h-[60vh] sm:max-h-[75vh] overflow-auto relative shadow-inner">
+                    <div id="pdf-spinner" class="absolute inset-0 bg-slate-950/80 flex flex-col items-center justify-center z-10">
+                        <i class="fa-solid fa-circle-notch fa-spin text-3xl text-amber-400 mb-2"></i>
+                        <span class="text-xs text-slate-300">Đang tải đề thi PDF...</span>
+                    </div>
+
+                    <!-- ĐÃ BỎ max-w-full ĐỂ CHO PHÉP ZOOM NỔI KHUNG -->
+                    <canvas id="pdf-canvas" class="rounded border border-slate-800 shadow-2xl block mx-auto"></canvas>
+                </div>
+            </section>
+
+            <!-- Cột Phiếu Tra Lời OMR -->
+            <section class="lg:col-span-5 xl:col-span-4 flex flex-col w-full">
+                <div class="omr-sheet-paper p-4 sm:p-5 rounded-2xl border-2 border-slate-500 shadow-2xl flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="border-b-2 border-slate-900 pb-2 mb-3 flex justify-between items-end">
+                            <div>
+                                <h2 class="text-base sm:text-lg font-black tracking-widest text-slate-900 uppercase">解答用紙</h2>
+                                <p class="text-[9px] sm:text-[10px] font-bold text-slate-600">JLPT ANSWER SHEET</p>
+                            </div>
+                            <div class="text-right">
+                                <span id="sheet-exam-title" class="text-xs font-bold bg-slate-200 text-slate-800 px-2 py-1 rounded">--</span>
+                            </div>
+                        </div>
+
+                        <!-- Khung danh sách câu hỏi OMR (Thanh cuộn mượt) -->
+                        <div id="omr-container" class="space-y-3 max-h-[45vh] sm:max-h-[50vh] overflow-y-auto pr-1 border-b border-slate-200 pb-3"></div>
+                    </div>
+
+                    <!-- Nút bấm nộp bài & chuyển phần -->
+                    <div class="pt-3 space-y-2">
+                        <div id="section-score-result" class="hidden"></div>
+
+                        <button id="btn-submit-section" class="w-full py-2.5 sm:py-3 bg-red-600 hover:bg-red-700 text-white font-black rounded-xl shadow-lg transition text-xs tracking-wider">
+                            <i class="fa-solid fa-check-double mr-1"></i> NỘP BÀI PHẦN NÀY
+                        </button>
+
+                        <button id="btn-next-section" class="hidden w-full py-2.5 sm:py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-black rounded-xl shadow-lg transition text-xs tracking-wider">
+                            CHUYỂN SANG PHẦN TIẾP THEO <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+
+                        <button id="btn-view-overall-score" class="hidden w-full py-2.5 sm:py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl shadow-lg transition text-xs flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-trophy"></i> HOÀN THÀNH & XEM TỔNG ĐIỂM
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- MODAL TỔNG ĐIỂM -->
+    <div id="overall-modal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 max-w-md w-full rounded-2xl p-5 sm:p-6 shadow-2xl space-y-4 relative">
+            <button id="btn-close-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white p-1"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <div id="overall-modal-content"></div>
+        </div>
+    </div>
+
+    <script src="jlpt.js"></script>
+</body>
+</html>
