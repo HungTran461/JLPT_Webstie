@@ -255,7 +255,7 @@
               "questions": [
                 { "id": 1, "page": 3, "correct": 3 },
                 { "id": 2, "page": 3, "correct": 2 },
-                { "id": 3, "page": 3, "correct": 4 },
+                { "id": 3, "page": 3, "correct": 3 },
                 { "id": 4, "page": 3, "correct": 0 },
                 { "id": 5, "page": 3, "correct": 1 },
                 { "id": 6, "page": 3, "correct": 2 },
